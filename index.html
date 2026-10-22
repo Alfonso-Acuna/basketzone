@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://upload.wikimedia.org">
     <link rel="preconnect" href="https://www.youtube-nocookie.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,9 +31,10 @@
                 <li><a href="#posiciones">Posiciones</a></li>
                 <li><a href="#historia">Historia</a></li>
                 <li><a href="#equipamiento">Equipamiento</a></li>
+                <li><a href="#tienda">Tienda</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <a href="#entrenamiento" class="btn btn-primary btn-sm nav-cta">Ver entrenamientos</a>
+            <a href="#tienda" class="btn btn-primary btn-sm nav-cta">Ir a la tienda</a>
         </nav>
 
         <div class="hero-inner">
@@ -578,10 +581,53 @@
             </div>
         </section>
 
+        <!-- ================= TIENDA ================= -->
+        <section id="tienda" class="section section-alt">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Secci&oacute;n 06</p>
+                <h2>Tienda <span class="grad">BasketZone</span></h2>
+                <p class="section-sub">
+                    Zapatillas, camisetas y accesorios con stock real por talla. El cat&aacute;logo se lee
+                    desde la base de datos y los pedidos descuentan existencias en el servidor.
+                </p>
+            </div>
+
+            <div class="shop-banner" id="shopBanner" role="status" aria-live="polite"></div>
+
+            <div class="shop-toolbar">
+                <label class="shop-field">
+                    <span>Categor&iacute;a</span>
+                    <select id="filterCategory">
+                        <option value="">Todas</option>
+                    </select>
+                </label>
+                <label class="shop-field">
+                    <span>Marca</span>
+                    <select id="filterBrand">
+                        <option value="">Todas</option>
+                    </select>
+                </label>
+                <label class="shop-field shop-field-grow">
+                    <span>Buscar</span>
+                    <input type="search" id="filterSearch" placeholder="Air Jordan, camiseta, bal&oacute;n..." autocomplete="off">
+                </label>
+                <button type="button" class="btn btn-ghost btn-sm" id="clearFilters">Limpiar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="openCart">
+                    Carrito <span class="cart-pill" id="cartCount">0</span>
+                </button>
+                <button type="button" class="btn btn-ghost btn-sm" id="openAuth">Entrar</button>
+            </div>
+
+            <p class="shop-meta" id="shopMeta"></p>
+
+            <div class="product-grid" id="productGrid" aria-live="polite"></div>
+            <p class="shop-empty" id="shopEmpty" hidden>No hay productos con esos filtros.</p>
+        </section>
+
         <!-- ================= CONTACTO ================= -->
         <section id="contacto" class="section section-alt">
             <div class="section-head">
-                <p class="eyebrow"><span class="dot"></span> Secci&oacute;n 06</p>
+                <p class="eyebrow"><span class="dot"></span> Secci&oacute;n 07</p>
                 <h2>&Uacute;nete a la <span class="grad">comunidad</span></h2>
                 <p class="section-sub">Buscamos jugadores, &aacute;rbitros y entrenadores para clinics y torneos.</p>
             </div>
@@ -658,6 +704,7 @@
                     <li><a href="#posiciones">Posiciones</a></li>
                     <li><a href="#historia">Historia</a></li>
                     <li><a href="#equipamiento">Equipamiento</a></li>
+                    <li><a href="#tienda">Tienda</a></li>
                 </ul>
             </nav>
             <div class="footer-links">
@@ -675,6 +722,93 @@
             <p>Fotograf&iacute;as: Wikimedia Commons y Unsplash &middot; Videos: Wikimedia Commons y YouTube.</p>
         </div>
     </footer>
+
+    <!-- ================= CARRITO ================= -->
+    <div class="drawer-backdrop" id="cartBackdrop" hidden></div>
+    <aside class="drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
+        <header class="drawer-head">
+            <h3 id="cartTitle">Tu carrito</h3>
+            <button type="button" class="drawer-close" id="closeCart" aria-label="Cerrar carrito">&times;</button>
+        </header>
+        <div class="drawer-body">
+            <ul class="cart-items" id="cartItems"></ul>
+            <p class="cart-empty" id="cartEmpty">El carrito est&aacute; vac&iacute;o.</p>
+
+            <dl class="cart-totals">
+                <div><dt>Subtotal</dt><dd id="cartSubtotal">0,00 &euro;</dd></div>
+                <div><dt>Env&iacute;o</dt><dd id="cartShipping">&mdash;</dd></div>
+                <div class="cart-total"><dt>Total</dt><dd id="cartTotal">0,00 &euro;</dd></div>
+            </dl>
+
+            <form class="checkout" id="checkoutForm" novalidate>
+                <h4>Datos de env&iacute;o</h4>
+                <label class="shop-field">
+                    <span>Nombre completo</span>
+                    <input id="checkoutName" type="text" autocomplete="name" required>
+                </label>
+                <label class="shop-field">
+                    <span>Correo electr&oacute;nico</span>
+                    <input id="checkoutEmail" type="email" autocomplete="email" required>
+                </label>
+                <label class="shop-field">
+                    <span>Direcci&oacute;n</span>
+                    <input id="checkoutAddress" type="text" autocomplete="street-address" required>
+                </label>
+                <p class="checkout-session" id="checkoutSession"></p>
+                <button type="submit" class="btn btn-primary btn-block" id="checkoutSubmit">Confirmar pedido</button>
+                <p class="form-status" id="checkoutStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </aside>
+
+    <!-- ================= CUENTA ================= -->
+    <div class="drawer-backdrop" id="authBackdrop" hidden></div>
+    <aside class="drawer drawer-sm" id="authDrawer" aria-hidden="true" aria-labelledby="authTitle">
+        <header class="drawer-head">
+            <h3 id="authTitle">Mi cuenta</h3>
+            <button type="button" class="drawer-close" id="closeAuth" aria-label="Cerrar">&times;</button>
+        </header>
+        <div class="drawer-body">
+            <div id="authSignedIn" hidden>
+                <p class="auth-hello" id="authHello"></p>
+                <button type="button" class="btn btn-ghost btn-block" id="signOutBtn">Cerrar sesi&oacute;n</button>
+            </div>
+            <div id="authForms">
+                <div class="auth-tabs">
+                    <button type="button" class="auth-tab is-active" data-auth-tab="login">Entrar</button>
+                    <button type="button" class="auth-tab" data-auth-tab="register">Crear cuenta</button>
+                </div>
+                <form class="auth-form" id="loginForm" novalidate>
+                    <label class="shop-field">
+                        <span>Correo</span>
+                        <input type="email" id="loginEmail" autocomplete="email" required>
+                    </label>
+                    <label class="shop-field">
+                        <span>Contrase&ntilde;a</span>
+                        <input type="password" id="loginPassword" autocomplete="current-password" required>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                    <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
+                </form>
+                <form class="auth-form" id="registerForm" novalidate hidden>
+                    <label class="shop-field">
+                        <span>Nombre completo</span>
+                        <input type="text" id="registerName" autocomplete="name" required>
+                    </label>
+                    <label class="shop-field">
+                        <span>Correo</span>
+                        <input type="email" id="registerEmail" autocomplete="email" required>
+                    </label>
+                    <label class="shop-field">
+                        <span>Contrase&ntilde;a (m&iacute;nimo 6)</span>
+                        <input type="password" id="registerPassword" autocomplete="new-password" minlength="6" required>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-block">Crear cuenta</button>
+                    <p class="form-status" id="registerStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </aside>
 
     <button type="button" class="to-top" id="toTop" aria-label="Volver arriba">&uarr;</button>
 
@@ -909,6 +1043,8 @@
             updateProgress();
         })();
     </script>
+
+    <script type="module" src="js/store.js"></script>
 
 </body>
 </html>
