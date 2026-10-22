@@ -3,141 +3,815 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BasketZone - Pasión por el Baloncesto</title>
+    <meta name="description" content="BasketZone - Leyendas, entrenamientos, posiciones e historia del baloncesto. Un archivo editorial sobre las grandes figuras del sport.">
+    <meta name="theme-color" content="#070b16">
+    <title>BasketZone &middot; El templo del baloncesto</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://upload.wikimedia.org">
+    <link rel="preconnect" href="https://www.youtube-nocookie.com">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Encabezado -->
-    <header>
-        <h1>BasketZone</h1>
-        <p>Pasión por el Baloncesto</p>
+
+    <div class="bg-canvas" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+    <!-- ================= ENCABEZADO / HERO ================= -->
+    <header id="inicio" class="hero">
+        <nav class="nav" aria-label="Navegacion principal">
+            <a href="#inicio" class="brand">
+                <span class="brand-ball" aria-hidden="true"></span>
+                <span class="brand-text">Basket<em>Zone</em></span>
+            </a>
+            <ul class="nav-list">
+                <li><a href="#leyendas">Leyendas</a></li>
+                <li><a href="#entrenamiento">Entrenamiento</a></li>
+                <li><a href="#posiciones">Posiciones</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#equipamiento">Equipamiento</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#entrenamiento" class="btn btn-primary btn-sm nav-cta">Ver entrenamientos</a>
+        </nav>
+
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="dot"></span> Temporada 2026 &middot; Edicion Leyendas</p>
+                <h1>El baloncesto no se mira.<br><span class="grad">Se entrena.</span></h1>
+                <p class="lead">
+                    Un archivo visual de las grandes figuras de todos los tiempos: sus rutinas, sus tiros,
+                    su disciplina. Todo lo que ocurre antes del primer silbatazo del partido.
+                </p>
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-primary" data-scroll="#entrenamiento">Entrar a la sala de entrenamiento</button>
+                    <a href="#leyendas" class="btn btn-ghost">Conocer a las leyendas</a>
+                </div>
+                <ul class="hero-metrics">
+                    <li><strong data-count="7">0</strong><span>Leyendas</span></li>
+                    <li><strong data-count="12">0</strong><span>Sesiones en video</span></li>
+                    <li><strong data-count="5">0</strong><span>Posiciones</span></li>
+                    <li><strong data-count="1891">0</strong><span>Anio cero</span></li>
+                </ul>
+            </div>
+
+            <figure class="hero-visual">
+                <div class="hero-photo">
+                    <img src="https://images.unsplash.com/photo-1572454181157-0b40dd7667fe?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                         alt="Cancha de baloncesto profesional iluminada durante un entrenamiento" loading="eager">
+                </div>
+                <figcaption>
+                    <strong>Cancha de entrenamiento</strong>
+                    <span>Donde nacen los hallazgos y los mates.</span>
+                </figcaption>
+                <div class="hero-ball" aria-hidden="true"></div>
+            </figure>
+        </div>
+
+        <div class="hero-court" aria-hidden="true"></div>
     </header>
 
-    <!-- Menú de Navegación -->
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#historia">Historia</a></li>
-            <li><a href="#posiciones">Posiciones</a></li>
-            <li><a href="#multimedia">Multimedia</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <main>
 
-    <!-- Sección Inicio -->
-    <section id="inicio">
-        <article>
-            <h2>¿Qué es el Baloncesto?</h2>
-            <p>El baloncesto es un deporte de equipo en el que dos conjuntos de cinco jugadores se enfrentan para intentar encestar un balón en el aro del equipo contrario.</p>
-            <p>Es un deporte que combina velocidad, estrategia, trabajo en equipo y habilidad técnica.</p>
-            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=80" alt="Jugadores de baloncesto en la cancha">
-            <br><br>
-            <a href="https://es.wikipedia.org/wiki/Baloncesto" target="_blank">Conoce más en Wikipedia</a>
-            <br><br>
-            <button onclick="alert('¡Prepárate para jugar baloncesto!')">¡Quiero Jugar!</button>
-        </article>
-    </section>
+        <!-- ================= LEYENDAS ================= -->
+        <section id="leyendas" class="section">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Seccion 01</p>
+                <h2>Las <span class="grad">leyendas</span></h2>
+                <p class="section-sub">
+                    Siete figuras que definieron el deporte. Pulsa &laquo;Ver entrenamiento&raquo; para cargar
+                    su sesion en el reproductor sin salir de la pagina.
+                </p>
+            </div>
 
-    <!-- Sección Historia -->
-    <section id="historia">
-        <article>
-            <h2>Historia del Baloncesto</h2>
-            <p>El baloncesto fue inventado en diciembre de 1891 por el Dr. James Naismith, profesor de educación física en la YMCA de Springfield, Massachusetts.</p>
-            <p>Buscando un deporte para mantener activos a sus alumnos en invierno, utilizó dos cestas de melocotones y un balón de fútbol.</p>
-            <h3>Datos Importantes:</h3>
-            <ol>
-                <li>Inventado en 1891 por James Naismith</li>
-                <li>Primeras reglas publicadas en 1892</li>
-                <li>Debutó en los Juegos Olímpicos en Berlín 1936</li>
-                <li>La NBA fue fundada en 1946</li>
-                <li>Hoy es uno de los deportes más populares del mundo</li>
-            </ol>
-        </article>
-    </section>
+            <div class="legend-grid">
 
-    <!-- Sección Posiciones -->
-    <section id="posiciones">
-        <article>
-            <h2>Posiciones Principales</h2>
-            <p>En un equipo de baloncesto hay 5 posiciones fundamentales, cada una con funciones específicas:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posición</th>
-                        <th>Nombre</th>
-                        <th>Función Principal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Base (Point Guard)</td>
-                        <td>Dirige el ataque y organiza las jugadas</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Escolta (Shooting Guard)</td>
-                        <td>Anota desde el perímetro y defiende</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Alero (Small Forward)</td>
-                        <td>Versátil, anota, rebotea y defiende</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Ala-Pívot (Power Forward)</td>
-                        <td>Juego en pintura y rebotes</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Pívot (Center)</td>
-                        <td>Protege el aro y domina los rebotes</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <h3>Equipamiento Básico:</h3>
-            <ul>
-                <li>Balón de baloncesto</li>
-                <li>Zapatillas deportivas</li>
-                <li>Camiseta y pantalón corto</li>
-                <li>Canasta y cancha</li>
-            </ul>
-        </article>
-    </section>
+                <article class="legend-card" data-video="wQWmRIHavC8" data-title="LeBron James - 1 hour workout (uncut)" data-author="NBA Highlights">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/LeBron_James_%2851959977144%29_%28cropped2%29.jpg/500px-LeBron_James_%2851959977144%29_%28cropped2%29.jpg"
+                             alt="LeBron James" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">Anotador historico</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>LeBron James</h3>
+                        <p class="nick">&laquo;King James&raquo;</p>
+                        <p>Veintidos temporadas, cuatro anillos y un cuerpo de trabajo filmado de principio a fin.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>4</dd></div>
+                            <div><dt>MVP</dt><dd>4</dd></div>
+                            <div><dt>Puntos</dt><dd>40.000+</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
 
-    <!-- Sección Multimedia -->
-    <section id="multimedia">
-        <article>
-            <h2>Multimedia</h2>
-            <h3>Video Destacado</h3>
-            <p>Mira una muestra de acción en la cancha:</p>
-            <video controls>
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento video.
-            </video>
-            
-            <h3>Contenido Externo</h3>
-            <p>Mejores jugadas de la NBA:</p>
-            <iframe src="https://www.youtube.com/embed/uVyZ1j2p1Vw" title="Mejores Jugadas NBA" allowfullscreen></iframe>
-        </article>
-    </section>
+                <article class="legend-card" data-video="knhNyxaoaZM" data-title="Michael Jordan Workout with Chicago Bulls" data-author="Basketball Pros Workouts">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Michael_jordan_admad_rashad_%2851276390562%29_%28cropped%29.jpg/500px-Michael_jordan_admad_rashad_%2851276390562%29_%28cropped%29.jpg"
+                             alt="Michael Jordan" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">6 anillos con los Bulls</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>Michael Jordan</h3>
+                        <p class="nick">&laquo;Su Majestad&raquo;</p>
+                        <p>La ambicion competitiva como metodo: cada repeticion contra un companero, sin excusas.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>6</dd></div>
+                            <div><dt>MVP</dt><dd>5</dd></div>
+                            <div><dt>Anillos</dt><dd>6</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
 
-    <!-- Sección Contacto -->
-    <section id="contacto">
-        <article>
-            <h2>Contacto</h2>
-            <p>¿Tienes alguna pregunta sobre baloncesto? Contáctanos:</p>
-            <button onclick="alert('Gracias por contactarnos. Te responderemos pronto.')">Enviar Consulta</button>
-            <br><br>
-            <p>Visita la web oficial de <a href="https://www.fiba.basketball" target="_blank">FIBA</a> para más información.</p>
-        </article>
-    </section>
+                <article class="legend-card" data-video="aULbG0TpbKc" data-title="Kobe Bryant on Practice" data-author="DVLP">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Kobe_Bryant_Dec_2014.jpg/500px-Kobe_Bryant_Dec_2014.jpg"
+                             alt="Kobe Bryant" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519432359516-73a2bb421826?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">5 anillos &middot; 1 MVP</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>Kobe Bryant</h3>
+                        <p class="nick">&laquo;Black Mamba&raquo;</p>
+                        <p>150 tiros a velocidad de juego, cada dia. La rutina convertida en arma competitiva.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>5</dd></div>
+                            <div><dt>MVP</dt><dd>1</dd></div>
+                            <div><dt>Record</dt><dd>81 pts</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
 
-    <!-- Pie de Página -->
+                <article class="legend-card" data-video="kQ8bBtxZ1XQ" data-title="Stephen Curry FULL Shooting Workout - 500+ Shots" data-author="Team USA Training Camp">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Stephen_Curry%2C_Olympic_Games_2024_%28cropped%29.jpg/500px-Stephen_Curry%2C_Olympic_Games_2024_%28cropped%29.jpg"
+                             alt="Stephen Curry" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">Revolucion del triple</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>Stephen Curry</h3>
+                        <p class="nick">&laquo;Chef Curry&raquo;</p>
+                        <p>Mas de 500 tiros por sesion y un rango que cambio la forma de jugar al basket.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>4</dd></div>
+                            <div><dt>MVP</dt><dd>2</dd></div>
+                            <div><dt>Treses</dt><dd>40%+</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
+
+                <article class="legend-card" data-video="o1Cfk9GXYAM" data-title="Kevin Durant - preparacion olimpica" data-author="Basketball Workout">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Kevin_Durant%2C_Paris_2024_%28cropped%29.jpg/500px-Kevin_Durant%2C_Paris_2024_%28cropped%29.jpg"
+                             alt="Kevin Durant" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">4 oros olimpicos</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>Kevin Durant</h3>
+                        <p class="nick">&laquo;El Segador&raquo;</p>
+                        <p>Uno contra uno sin descanso, ataques desde el medio rango y un analisis de films incesante.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>2</dd></div>
+                            <div><dt>MVP</dt><dd>2</dd></div>
+                            <div><dt>Anotador</dt><dd>Top 5</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
+
+                <article class="legend-card" data-video="yahJ1H7HA5o" data-title="Giannis Greek Freak Antetokounmpo - Motivational Workout" data-author="Workout">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Giannis_Antetokounmpo_%2851915153421%29_%28cropped%29.jpg/500px-Giannis_Antetokounmpo_%2851915153421%29_%28cropped%29.jpg"
+                             alt="Giannis Antetokounmpo" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1762025744151-4bd3b166b271?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">2 MVP consecutivos</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>Giannis Antetokounmpo</h3>
+                        <p class="nick">&laquo;Greek Freak&raquo;</p>
+                        <p>Tamano, velocidad y fuerza en el mismo paquete, con una disciplina diaria innegociable.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>1</dd></div>
+                            <div><dt>MVP</dt><dd>2</dd></div>
+                            <div><dt>Treses</dt><dd>Desde 1970</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
+
+                <article class="legend-card" data-video="4QndfQoiT48" data-title="How Kareem Abdul-Jabbar Learned the Skyhook" data-author="Documental">
+                    <div class="legend-media">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Kareem_Abdul-Jabbar_May_2014.jpg/500px-Kareem_Abdul-Jabbar_May_2014.jpg"
+                             alt="Kareem Abdul-Jabbar" loading="lazy" width="500" height="500"
+                             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1505666287802-931dc83948e9?auto=format&amp;fit=crop&amp;w=800&amp;q=80';">
+                        <span class="legend-badge">38.387 puntos</span>
+                    </div>
+                    <div class="legend-body">
+                        <h3>Kareem Abdul-Jabbar</h3>
+                        <p class="nick">&laquo;Skyhook&raquo;</p>
+                        <p>El gancho aprendido en la UCLA: taller, repeticion y una firma imposible de defender.</p>
+                        <dl class="legend-stats">
+                            <div><dt>Titulos</dt><dd>6</dd></div>
+                            <div><dt>MVP</dt><dd>6</dd></div>
+                            <div><dt>Puntos</dt><dd>38.387</dd></div>
+                        </dl>
+                        <button type="button" class="btn btn-outline btn-block" data-play>Ver entrenamiento</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ================= ENTRENAMIENTO / MULTIMEDIA ================= -->
+        <section id="entrenamiento" class="section section-alt">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Seccion 02</p>
+                <h2>Sala de <span class="grad">entrenamiento</span></h2>
+                <p class="section-sub">
+                    Todos los clips se reproducen <strong>dentro de esta pagina</strong>: sin enlaces
+                    externos y sin redirecciones. Solo pulsa el play.
+                </p>
+            </div>
+
+            <article class="feature-player">
+                <div class="player-frame">
+                    <iframe id="featuredPlayer"
+                            src="https://www.youtube-nocookie.com/embed/wQWmRIHavC8?rel=0&amp;modestbranding=1"
+                            title="Reproductor destacado de entrenamiento"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="player-meta">
+                    <p class="player-kicker">En pantalla ahora</p>
+                    <h3 id="featuredTitle">LeBron James - 1 hour workout (uncut)</h3>
+                    <p id="featuredAuthor">NBA Highlights</p>
+                    <div class="player-tags">
+                        <span class="tag">Trabajo fisico</span>
+                        <span class="tag">Rutina</span>
+                        <span class="tag">Sin edicion</span>
+                    </div>
+                </div>
+            </article>
+
+            <h3 class="block-title">Biblioteca tecnica &middot; archivos nativos</h3>
+            <div class="video-grid">
+
+                <article class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1519432359516-73a2bb421826?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/3/35/Basketball-Basic_Types_of_Dribbling.webm" type="video/webm">
+                            Tu navegador no soporta el elemento <code>video</code>.
+                        </video>
+                    </div>
+                    <div class="video-body">
+                        <h4>Tipos basicos de regate</h4>
+                        <p>Tutorial de Wikimedia Commons: control de mano, altura de rebote y cambios de ritmo.</p>
+                        <span class="video-meta">Video &middot; WebM &middot; 58 s</span>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1572454181157-0b40dd7667fe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/1/13/2012_Team_USA_basketball_practice.ogv" type="video/ogg">
+                            Tu navegador no soporta el elemento <code>video</code>.
+                        </video>
+                    </div>
+                    <div class="video-body">
+                        <h4>Entrenamiento del Team USA 2012</h4>
+                        <p>Sesion real de la seleccion olimpica: LeBron, Kobe, Durant y Carmelo en la pista.</p>
+                        <span class="video-meta">Video &middot; Ogg &middot; 33 s</span>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Nike_Athletes_Salute_Kobe_Bryant.webm" type="video/webm">
+                            Tu navegador no soporta el elemento <code>video</code>.
+                        </video>
+                    </div>
+                    <div class="video-body">
+                        <h4>Saludo a Kobe Bryant</h4>
+                        <p>Homenaje de los atletas de la marca a la Black Mamba, con material de sesion.</p>
+                        <span class="video-meta">Video &middot; WebM &middot; 97 s</span>
+                    </div>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-frame">
+                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1702136931777-28cf9b8e4517?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Dunk_in_Serie_A_Basket.ogg" type="video/ogg">
+                            Tu navegador no soporta el elemento <code>video</code>.
+                        </video>
+                    </div>
+                    <div class="video-body">
+                        <h4>Mate en Serie A</h4>
+                        <p>Clip de ataque vertical: salto, coordinacion y control aereo en el remate.</p>
+                        <span class="video-meta">Video &middot; Ogg &middot; 10 s</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <h3 class="block-title">Clips destacados &middot; YouTube embebido</h3>
+            <div class="embed-grid">
+                <article class="embed-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/Z5mZgw-oTW0?rel=0" title="LeBron James - sesion de anotacion completa"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h4>LeBron James &middot; sesion de anotacion</h4>
+                </article>
+                <article class="embed-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/9zSwVPz-7XU?rel=0" title="Stephen Curry - drill de tiro y entrenamiento"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h4>Stephen Curry &middot; drill de tiro</h4>
+                </article>
+                <article class="embed-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/0tvb4MPsapc?rel=0" title="Kevin Durant 1v1 en el workout de Rico Hines"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h4>Kevin Durant &middot; 1v1 en el gym</h4>
+                </article>
+                <article class="embed-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube-nocookie.com/embed/LmRGNz_55Us?rel=0" title="Kobe Bryant ensena a prospectos de base"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <h4>Kobe Bryant &middot; masterclass</h4>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= POSICIONES ================= -->
+        <section id="posiciones" class="section">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Seccion 03</p>
+                <h2>Las cinco <span class="grad">posiciones</span></h2>
+                <p class="section-sub">
+                    Cada rol tiene una responsabilidad distinta. Esta es la guia rapida para entender
+                    quien hace que en una cancha.
+                </p>
+            </div>
+
+            <article class="panel">
+                <div class="panel-head">
+                    <h3>Cuadro de posiciones</h3>
+                    <button type="button" class="btn btn-ghost btn-sm" id="copyTable">Copiar tabla</button>
+                </div>
+                <div class="table-wrap">
+                    <table id="positionsTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Posicion</th>
+                                <th scope="col">Nombre en ingles</th>
+                                <th scope="col">Rol principal</th>
+                                <th scope="col">Habilidades clave</th>
+                                <th scope="col">Rango tipico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>Base</strong></td>
+                                <td>Point Guard</td>
+                                <td>Dirige el ataque y organiza el ritmo del juego</td>
+                                <td>Vision, pase, manejo de balon</td>
+                                <td>1.70 &ndash; 1.95 m</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>Escolta</strong></td>
+                                <td>Shooting Guard</td>
+                                <td>Anotador exterior y defensor del perimetro</td>
+                                <td>Tiro, corte, defensa</td>
+                                <td>1.90 &ndash; 2.00 m</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>Alero</strong></td>
+                                <td>Small Forward</td>
+                                <td>Versatil: anota, rebotea y defiende varias posiciones</td>
+                                <td>Atletismo, polivalencia</td>
+                                <td>1.98 &ndash; 2.06 m</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>Ala-Pivot</strong></td>
+                                <td>Power Forward</td>
+                                <td>Juego interior, rebote y recepcion en el poste</td>
+                                <td>Fuerza, alcance, movilidad</td>
+                                <td>2.03 &ndash; 2.11 m</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>Pivot</strong></td>
+                                <td>Center</td>
+                                <td>Protege el aro, domina el rebote y la pintura</td>
+                                <td>Tamano, bloqueo, verticalidad</td>
+                                <td>2.10 &ndash; 2.20 m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="panel-note">
+                    <a href="https://www.fiba.basketball" target="_blank" rel="noopener">Consultar el reglamento oficial de FIBA &rarr;</a>
+                </p>
+            </article>
+
+            <div class="rules-grid">
+                <article class="rule-card">
+                    <h3><span class="rule-num">01</span> Reglas de oro</h3>
+                    <ul>
+                        <li>5 jugadores en cancha por equipo</li>
+                        <li>24 segundos para cada ataque</li>
+                        <li>Tiro de 3 puntos a 6,75 m del aro</li>
+                        <li>8 segundos para cruzar la mitad campo</li>
+                        <li>5 faltas personales antes de la exclusion</li>
+                    </ul>
+                </article>
+                <article class="rule-card">
+                    <h3><span class="rule-num">02</span> La pista</h3>
+                    <ul>
+                        <li>Cancha reglamentaria: 28 &times; 15 metros</li>
+                        <li>Altura del aro: 3,05 metros</li>
+                        <li>Linea de tiros libres a 4,60 m</li>
+                        <li>Zona de 3 puntos en forma de arco</li>
+                        <li>Circulacion de 20 segundos</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= HISTORIA ================= -->
+        <section id="historia" class="section section-alt">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Seccion 04</p>
+                <h2>Historia del <span class="grad">baloncesto</span></h2>
+                <p class="section-sub">
+                    De dos cestas de melocotones colgadas en una pared a un deporte jugado en 212 paises.
+                </p>
+            </div>
+
+            <article class="panel">
+                <div class="history-intro">
+                    <img src="https://images.unsplash.com/photo-1751363262867-afb2be83527a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                         alt="Jugador de baloncesto en una cancha exterior" loading="lazy">
+                    <p>
+                        En diciembre de 1891 el Dr. James Naismith, profesor de educacion fisica en la YMCA
+                        de Springfield (Massachusetts), colgo dos cestas de melocotones a 3,05 m del suelo
+                        porque necesitaba un deporte de invierno para sus alumnos. Nunca imagino que esas
+                        cestas terminarian siendo el predecesor de una industria global.
+                    </p>
+                </div>
+
+                <ol class="timeline">
+                    <li>
+                        <span class="tl-year">1891</span>
+                        <div class="tl-body">
+                            <h3>Nace el deporte</h3>
+                            <p>Naismith publica las 13 reglas originales: campo rectangular, balon de futbol y cestas de melocotones.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tl-year">1936</span>
+                        <div class="tl-body">
+                            <h3>Debut olimpico</h3>
+                            <p>El baloncesto entra en el programa de los Juegos de Berlin y se consolida como deporte internacional.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tl-year">1946</span>
+                        <div class="tl-body">
+                            <h3>Fundacion de la BAA</h3>
+                            <p>Nace la Basketball Association of America, que en 1949 se fusiona con la NBL y origina la NBA.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tl-year">1984</span>
+                        <div class="tl-body">
+                            <h3>La era del Skyhook</h3>
+                            <p>Kareem Abdul-Jabbar supera el record de puntos de Wilt Chamberlain con su gancho, inbatible durante casi tres decadas.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tl-year">2012</span>
+                        <div class="tl-body">
+                            <h3>Era moderna</h3>
+                            <p>LeBron James y el Team USA dominan el ciclo dorado del basketsbol internacional.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="tl-year">2026</span>
+                        <div class="tl-body">
+                            <h3>La revolucion del triple</h3>
+                            <p>Stephen Curry demuestra que un 40% de triples desde el arco cambia las reglas tacticas de todo el planeta.</p>
+                        </div>
+                    </li>
+                </ol>
+            </article>
+        </section>
+
+        <!-- ================= EQUIPAMIENTO ================= -->
+        <section id="equipamiento" class="section">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Seccion 05</p>
+                <h2>Equipamiento <span class="grad">esencial</span></h2>
+                <p class="section-sub">Lo minimo indispensable para salir a la cancha con ventaja.</p>
+            </div>
+
+            <div class="equip-grid">
+                <article class="equip-card">
+                    <span class="equip-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
+                    </span>
+                    <h3>Balon oficial</h3>
+                    <p>Tamano 7 para categorias masculinas y 6 femeninas, con una presion entre 7,5 y 8,5 psi.</p>
+                </article>
+                <article class="equip-card">
+                    <span class="equip-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 16c3-1 5-4 6-8l6-4-3 6 4 3-6 2-4 4z"/></svg>
+                    </span>
+                    <h3>Zapatillas</h3>
+                    <p>Agarre, amortiguacion y soporte de tobillo. El agarre define tus cambios de direccion.</p>
+                </article>
+                <article class="equip-card">
+                    <span class="equip-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3h8l1 6-5 3-5-3z"/><path d="M9 12v3l-4 4v2h14v-2l-4-4v-3"/></svg>
+                    </span>
+                    <h3>Uniforme</h3>
+                    <p>Camiseta sin mangas, pantalon corto y calcetines altos para proteger las pantorrillas.</p>
+                </article>
+                <article class="equip-card">
+                    <span class="equip-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="12" rx="2"/><path d="M12 15v6M8 21h8"/><circle cx="12" cy="9" r="3"/></svg>
+                    </span>
+                    <h3>Cancha</h3>
+                    <p>Superficie de madera o asfalto, con aro a 3,05 m y lineas claramente marcadas.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <section id="contacto" class="section section-alt">
+            <div class="section-head">
+                <p class="eyebrow"><span class="dot"></span> Seccion 06</p>
+                <h2>Unete a la <span class="grad">comunidad</span></h2>
+                <p class="section-sub">Buscamos jugadores, arbitros y entrenadores para clinics y torneos.</p>
+            </div>
+
+            <div class="contact-wrap">
+                <article class="panel contact-panel">
+                    <h3>Escríbenos</h3>
+                    <p>Completa el formulario y te respondemos en menos de 48 horas.</p>
+                    <form class="form" id="contactForm" novalidate>
+                        <div class="field">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="LeBron James" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Correo electronico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="perfil">Perfil</label>
+                            <select id="perfil" name="perfil">
+                                <option>Jugador/a</option>
+                                <option>Entrenador/a</option>
+                                <option>Aficionado/a</option>
+                                <option>Prensa o medio</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuentanos que te trae a BasketZone..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </article>
+
+                <article class="panel map-panel">
+                    <h3>Donde estamos</h3>
+                    <p>Club BasketZone &middot; Polideportivo municipal</p>
+                    <div class="iframe-container">
+                        <iframe src="https://www.google.com/maps?q=Medellin,Antioquia,Colombia&amp;output=embed"
+                                title="Ubicacion del club BasketZone" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <ul class="contact-list">
+                        <li><strong>Email</strong> <a href="mailto:hola@basketzone.dev">hola@basketzone.dev</a></li>
+                        <li><strong>Horario</strong> Lunes a sabado, 7:00 &ndash; 21:00</li>
+                        <li><strong>Redes</strong>
+                            <a href="https://www.fiba.basketball" target="_blank" rel="noopener">FIBA</a> &middot;
+                            <a href="https://www.nba.com" target="_blank" rel="noopener">NBA</a> &middot;
+                            <a href="https://www.euroleague.net" target="_blank" rel="noopener">EuroLeague</a>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= PIE DE PAGINA ================= -->
     <footer>
-        <p>&copy; 2026 BasketZone. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="#inicio" class="brand">
+                    <span class="brand-ball" aria-hidden="true"></span>
+                    <span class="brand-text">Basket<em>Zone</em></span>
+                </a>
+                <p>El templo del baloncesto: leyendas, tecnica y trabajo. Sin excusas.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Navegacion del pie de pagina">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#leyendas">Leyendas</a></li>
+                    <li><a href="#entrenamiento">Entrenamiento</a></li>
+                    <li><a href="#posiciones">Posiciones</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#equipamiento">Equipamiento</a></li>
+                </ul>
+            </nav>
+            <div class="footer-links">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="https://www.fiba.basketball" target="_blank" rel="noopener">Reglamento FIBA</a></li>
+                    <li><a href="https://www.nba.com" target="_blank" rel="noopener">NBA</a></li>
+                    <li><a href="https://es.wikipedia.org/wiki/Baloncesto" target="_blank" rel="noopener">Wikipedia</a></li>
+                    <li><a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BasketZone &middot; Proyecto educativo de desarrollo web.</p>
+            <p>Fotografias: Wikimedia Commons y Unsplash &middot; Videos: Wikimedia Commons y YouTube.</p>
+        </div>
     </footer>
+
+    <button type="button" class="to-top" id="toTop" aria-label="Volver arriba">&uarr;</button>
+
+    <script>
+        (function () {
+            "use strict";
+
+            /* ---------- Barra de progreso ---------- */
+            var bar = document.getElementById('progressBar');
+            function updateProgress() {
+                var doc = document.documentElement;
+                var scrollable = doc.scrollHeight - doc.clientHeight;
+                var pct = scrollable > 0 ? (doc.scrollTop / scrollable) * 100 : 0;
+                bar.style.width = pct + '%';
+            }
+
+            /* ---------- Boton volver arriba ---------- */
+            var toTop = document.getElementById('toTop');
+            toTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            /* ---------- Navegacion activa ---------- */
+            var links = Array.prototype.slice.call(document.querySelectorAll('.nav-list a'));
+            var sections = links.map(function (a) {
+                return document.querySelector(a.getAttribute('href'));
+            }).filter(Boolean);
+
+            function setActive(id) {
+                links.forEach(function (a) {
+                    a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+                });
+            }
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            setActive(entry.target.id);
+                        }
+                    });
+                }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+                sections.forEach(function (s) { observer.observe(s); });
+            }
+
+            /* ---------- Botones que navegan a una seccion ---------- */
+            document.querySelectorAll('[data-scroll]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var target = document.querySelector(btn.getAttribute('data-scroll'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            /* ---------- Reproductor destacado ---------- */
+            var frame = document.getElementById('featuredPlayer');
+            var titleEl = document.getElementById('featuredTitle');
+            var authorEl = document.getElementById('featuredAuthor');
+
+            document.querySelectorAll('.legend-card').forEach(function (card) {
+                var btn = card.querySelector('[data-play]');
+                btn.addEventListener('click', function () {
+                    var id = card.getAttribute('data-video');
+                    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&autoplay=1&modestbranding=1';
+                    titleEl.textContent = card.getAttribute('data-title');
+                    authorEl.textContent = card.getAttribute('data-author');
+                    document.getElementById('entrenamiento').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            /* ---------- Contadores animados ---------- */
+            function animateCount(el) {
+                var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                var duration = 1400;
+                var start = null;
+                function step(ts) {
+                    if (!start) { start = ts; }
+                    var p = Math.min((ts - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);
+                    el.textContent = Math.round(target * eased).toLocaleString('es-ES');
+                    if (p < 1) { window.requestAnimationFrame(step); }
+                }
+                window.requestAnimationFrame(step);
+            }
+
+            var counters = document.querySelectorAll('[data-count]');
+            if ('IntersectionObserver' in window) {
+                var cObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            animateCount(entry.target);
+                            cObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.4 });
+                counters.forEach(function (c) { cObserver.observe(c); });
+            } else {
+                counters.forEach(animateCount);
+            }
+
+            /* ---------- Copiar tabla ---------- */
+            var copyBtn = document.getElementById('copyTable');
+            copyBtn.addEventListener('click', function () {
+                var table = document.getElementById('positionsTable');
+                var text = Array.prototype.map.call(table.querySelectorAll('tr'), function (tr) {
+                    return Array.prototype.map.call(tr.children, function (cell) {
+                        return cell.innerText.trim();
+                    }).join(' | ');
+                }).join('\n');
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(function () {
+                        copyBtn.textContent = 'Tabla copiada';
+                        setTimeout(function () { copyBtn.textContent = 'Copiar tabla'; }, 1800);
+                    });
+                } else {
+                    copyBtn.textContent = 'No se pudo copiar';
+                    setTimeout(function () { copyBtn.textContent = 'Copiar tabla'; }, 1800);
+                }
+            });
+
+            /* ---------- Formulario ---------- */
+            var form = document.getElementById('contactForm');
+            var status = document.getElementById('formStatus');
+            form.addEventListener('submit', function (ev) {
+                ev.preventDefault();
+                var name = document.getElementById('nombre').value.trim();
+                var email = document.getElementById('email').value.trim();
+                if (!name || !email) {
+                    status.textContent = 'Por favor completa nombre y correo electronico.';
+                    status.className = 'form-status is-error';
+                    return;
+                }
+                status.textContent = 'Gracias ' + name + '. Hemos recibido tu mensaje y te responderemos pronto.';
+                status.className = 'form-status is-ok';
+                form.reset();
+            });
+
+            /* ---------- Scroll ---------- */
+            window.addEventListener('scroll', function () {
+                updateProgress();
+                toTop.classList.toggle('is-visible', window.scrollY > 600);
+            }, { passive: true });
+
+            updateProgress();
+        })();
+    </script>
+
 </body>
 </html>
