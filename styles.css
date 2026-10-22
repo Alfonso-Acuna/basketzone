@@ -769,6 +769,68 @@ textarea {
     position: relative;
     aspect-ratio: 16 / 9;
     background: #000;
+    overflow: hidden;
+}
+
+.player-frame iframe,
+.player-frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.player-frame video {
+    object-fit: contain;
+    background: #000;
+}
+
+.is-off {
+    display: none !important;
+}
+
+.player-notice {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: #ffe2bd;
+    background: linear-gradient(180deg, rgba(10, 6, 2, 0), rgba(10, 6, 2, 0.92) 45%);
+    text-align: center;
+}
+
+.player-switch {
+    align-self: flex-start;
+    margin-top: 0.9rem;
+    padding: 0.6rem 1.05rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 176, 46, 0.45);
+    background: rgba(255, 176, 46, 0.12);
+    color: var(--amber);
+    font: inherit;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.player-switch:hover {
+    background: rgba(255, 176, 46, 0.22);
+    border-color: rgba(255, 176, 46, 0.8);
+    transform: translateY(-2px);
+}
+
+.video-card.has-error .video-frame {
+    background: repeating-linear-gradient(45deg, #170c06, #170c06 12px, #1e1008 12px, #1e1008 24px);
 }
 
 .player-frame iframe,

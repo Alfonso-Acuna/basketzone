@@ -85,7 +85,7 @@
 
             <div class="legend-grid">
 
-                <article class="legend-card" data-video="wQWmRIHavC8" data-title="LeBron James - 1 hour workout (uncut)" data-author="NBA Highlights">
+                <article class="legend-card" data-video="WUqrS50rtMY" data-title="LeBron James - Workout compilation" data-author="Basketball Pros Workouts">
                     <div class="legend-media">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/LeBron_James_%2851959977144%29_%28cropped2%29.jpg/500px-LeBron_James_%2851959977144%29_%28cropped2%29.jpg"
                              alt="LeBron James" loading="lazy" width="500" height="500"
@@ -240,22 +240,29 @@
             </div>
 
             <article class="feature-player">
-                <div class="player-frame">
-                    <iframe id="featuredPlayer"
-                            src="https://www.youtube-nocookie.com/embed/wQWmRIHavC8?rel=0&amp;modestbranding=1"
+                <div class="player-frame" id="featuredFrame">
+                    <iframe id="featuredPlayer" data-video="WUqrS50rtMY"
+                            src="https://www.youtube-nocookie.com/embed/WUqrS50rtMY?rel=0&amp;enablejsapi=1&amp;modestbranding=1"
                             title="Reproductor destacado de entrenamiento"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen loading="lazy"></iframe>
+                    <video id="featuredFallback" class="is-off" controls playsinline preload="metadata"
+                           poster="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Basketball-Basic_Types_of_Dribbling.webm/Basketball-Basic_Types_of_Dribbling.webm.480p.vp9.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
+                        <source src="https://upload.wikimedia.org/wikipedia/commons/3/35/Basketball-Basic_Types_of_Dribbling.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
+                    </video>
+                    <p id="playerNotice" class="player-notice is-off" role="status"></p>
                 </div>
                 <div class="player-meta">
                     <p class="player-kicker">En pantalla ahora</p>
-                    <h3 id="featuredTitle">LeBron James - 1 hour workout (uncut)</h3>
-                    <p id="featuredAuthor">NBA Highlights</p>
+                    <h3 id="featuredTitle">LeBron James - Workout compilation</h3>
+                    <p id="featuredAuthor">Basketball Pros Workouts</p>
                     <div class="player-tags">
                         <span class="tag">Trabajo f&iacute;sico</span>
                         <span class="tag">Rutina</span>
                         <span class="tag">Sin edici&oacute;n</span>
                     </div>
+                    <button type="button" class="player-switch" id="playerSwitch">Ver en archivo nativo</button>
                 </div>
             </article>
 
@@ -264,21 +271,23 @@
 
                 <article class="video-card">
                     <div class="video-frame">
-                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1519432359516-73a2bb421826?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
-                            <source src="https://upload.wikimedia.org/wikipedia/commons/3/35/Basketball-Basic_Types_of_Dribbling.webm" type="video/webm">
+                        <video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1519432359516-73a2bb421826?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Basketball-Basic_Types_of_Dribbling.webm/Basketball-Basic_Types_of_Dribbling.webm.480p.vp9.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/3/35/Basketball-Basic_Types_of_Dribbling.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
                             Tu navegador no soporta el elemento <code>video</code>.
                         </video>
                     </div>
                     <div class="video-body">
                         <h4>Tipos b&aacute;sicos de regate</h4>
                         <p>Tutorial de Wikimedia Commons: control de mano, altura de rebote y cambios de ritmo.</p>
-                        <span class="video-meta">Video &middot; WebM &middot; 58 s</span>
+                        <span class="video-meta">Video &middot; WebM VP9 &middot; 58 s</span>
                     </div>
                 </article>
 
                 <article class="video-card">
                     <div class="video-frame">
-                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1572454181157-0b40dd7667fe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                        <video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1572454181157-0b40dd7667fe?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/1/13/2012_Team_USA_basketball_practice.ogv/2012_Team_USA_basketball_practice.ogv.480p.vp9.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
                             <source src="https://upload.wikimedia.org/wikipedia/commons/1/13/2012_Team_USA_basketball_practice.ogv" type="video/ogg">
                             Tu navegador no soporta el elemento <code>video</code>.
                         </video>
@@ -286,27 +295,29 @@
                     <div class="video-body">
                         <h4>Entrenamiento del Team USA 2012</h4>
                         <p>Sesi&oacute;n real de la selecci&oacute;n ol&iacute;mpica: LeBron, Kobe, Durant y Carmelo en la pista.</p>
-                        <span class="video-meta">Video &middot; Ogg &middot; 33 s</span>
+                        <span class="video-meta">Video &middot; WebM VP9 &middot; 33 s</span>
                     </div>
                 </article>
 
                 <article class="video-card">
                     <div class="video-frame">
-                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
-                            <source src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Nike_Athletes_Salute_Kobe_Bryant.webm" type="video/webm">
+                        <video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e2/Nike_Athletes_Salute_Kobe_Bryant.webm/Nike_Athletes_Salute_Kobe_Bryant.webm.480p.vp9.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Nike_Athletes_Salute_Kobe_Bryant.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
                             Tu navegador no soporta el elemento <code>video</code>.
                         </video>
                     </div>
                     <div class="video-body">
                         <h4>Saludo a Kobe Bryant</h4>
                         <p>Homenaje de los atletas de la marca a la Black Mamba, con material de sesi&oacute;n.</p>
-                        <span class="video-meta">Video &middot; WebM &middot; 97 s</span>
+                        <span class="video-meta">Video &middot; WebM VP9 &middot; 97 s</span>
                     </div>
                 </article>
 
                 <article class="video-card">
                     <div class="video-frame">
-                        <video controls preload="metadata" poster="https://images.unsplash.com/photo-1702136931777-28cf9b8e4517?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                        <video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1702136931777-28cf9b8e4517?auto=format&amp;fit=crop&amp;w=1000&amp;q=80">
+                            <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8d/Dunk_in_Serie_A_Basket.ogg/Dunk_in_Serie_A_Basket.ogg.480p.vp9.webm" type="video/webm; codecs=&quot;vp9, opus&quot;">
                             <source src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Dunk_in_Serie_A_Basket.ogg" type="video/ogg">
                             Tu navegador no soporta el elemento <code>video</code>.
                         </video>
@@ -314,7 +325,7 @@
                     <div class="video-body">
                         <h4>Mate en Serie A</h4>
                         <p>Clip de ataque vertical: salto, coordinaci&oacute;n y control a&eacute;reo en el remate.</p>
-                        <span class="video-meta">Video &middot; Ogg &middot; 10 s</span>
+                        <span class="video-meta">Video &middot; WebM VP9 &middot; 10 s</span>
                     </div>
                 </article>
 
@@ -667,6 +678,7 @@
 
     <button type="button" class="to-top" id="toTop" aria-label="Volver arriba">&uarr;</button>
 
+    <script src="https://www.youtube.com/iframe_api" async></script>
     <script>
         (function () {
             "use strict";
@@ -723,15 +735,100 @@
             var frame = document.getElementById('featuredPlayer');
             var titleEl = document.getElementById('featuredTitle');
             var authorEl = document.getElementById('featuredAuthor');
+            var fallback = document.getElementById('featuredFallback');
+            var notice = document.getElementById('playerNotice');
+            var switchBtn = document.getElementById('playerSwitch');
+            var player = null;
+            var playerReady = false;
+            var usingNative = false;
+            var currentId = frame.getAttribute('data-video') || 'WUqrS50rtMY';
+
+            function setMode(native) {
+                usingNative = native;
+                frame.classList.toggle('is-off', native);
+                fallback.classList.toggle('is-off', !native);
+                switchBtn.textContent = native ? 'Ver en YouTube' : 'Ver en archivo nativo';
+                if (native) {
+                    notice.textContent = 'El clip no se puede incrustar en este navegador: se reproduce el archivo nativo.';
+                    notice.classList.remove('is-off');
+                } else {
+                    notice.classList.add('is-off');
+                }
+            }
+
+            function showNative() {
+                if (!usingNative) { setMode(true); }
+                fallback.play().catch(function () { /* autoplay bloqueado: el usuario pulsa play */ });
+            }
+
+            function onPlayerError() {
+                showNative();
+            }
+
+            function createPlayer() {
+                if (!window.YT || !window.YT.Player) { return; }
+                try {
+                    player = new YT.Player('featuredPlayer', {
+                        host: 'https://www.youtube-nocookie.com',
+                        events: {
+                            onReady: function () { playerReady = true; },
+                            onError: onPlayerError
+                        }
+                    });
+                } catch (err) {
+                    player = null;
+                }
+            }
+
+            if (window.YT && window.YT.Player) {
+                createPlayer();
+            } else {
+                window.onYouTubeIframeAPIReady = createPlayer;
+            }
+
+            function loadVideo(id, title, author) {
+                titleEl.textContent = title;
+                authorEl.textContent = author;
+                notice.classList.add('is-off');
+                currentId = id;
+
+                if (usingNative) { setMode(false); }
+
+                if (player && playerReady && typeof player.loadVideoById === 'function') {
+                    player.loadVideoById(id);
+                } else {
+                    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&autoplay=1&enablejsapi=1&modestbranding=1';
+                }
+                document.getElementById('entrenamiento').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
 
             document.querySelectorAll('.legend-card').forEach(function (card) {
                 var btn = card.querySelector('[data-play]');
                 btn.addEventListener('click', function () {
-                    var id = card.getAttribute('data-video');
-                    frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&autoplay=1&modestbranding=1';
-                    titleEl.textContent = card.getAttribute('data-title');
-                    authorEl.textContent = card.getAttribute('data-author');
-                    document.getElementById('entrenamiento').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    loadVideo(
+                        card.getAttribute('data-video'),
+                        card.getAttribute('data-title'),
+                        card.getAttribute('data-author')
+                    );
+                });
+            });
+
+            switchBtn.addEventListener('click', function () {
+                if (usingNative) {
+                    setMode(false);
+                    if (player && playerReady) { player.loadVideoById(currentId); }
+                    else { frame.src = 'https://www.youtube-nocookie.com/embed/' + currentId + '?rel=0&autoplay=1&enablejsapi=1&modestbranding=1'; }
+                } else {
+                    setMode(true);
+                    fallback.play().catch(function () {});
+                }
+            });
+
+            /* ---------- Fallo de un video nativo ---------- */
+            document.querySelectorAll('.video-frame video').forEach(function (v) {
+                v.addEventListener('error', function () {
+                    var card = v.closest('.video-card');
+                    if (card) { card.classList.add('has-error'); }
                 });
             });
 

@@ -92,12 +92,18 @@ Se aplican de forma explícita: `font-family`, `color`, `background-color`, `mar
 
 | Video | Formato | Fuente |
 |---|---|---|
-| Tipos básicos de regate | WebM | Wikimedia Commons |
-| Entrenamiento del Team USA 2012 | Ogg | Wikimedia Commons |
-| Saludo a Kobe Bryant | WebM | Wikimedia Commons |
-| Mate en Serie A | Ogg | Wikimedia Commons |
+| Tipos básicos de regate | WebM VP9 | Wikimedia Commons |
+| Entrenamiento del Team USA 2012 | WebM VP9 | Wikimedia Commons |
+| Saludo a Kobe Bryant | WebM VP9 | Wikimedia Commons |
+| Mate en Serie A | WebM VP9 | Wikimedia Commons |
 
 Cada `<video>` incluye `<source type="...">`, `poster` y texto alternativo con `<code>video</code>`.
+
+> **Por qué WebM VP9 y no Ogg.** Wikimedia Commons distribuye estos clips como Ogg Theora (`.ogv` / `.ogg`),
+> un códec que **Chrome y Edge ya no decodifican** (desde Chrome 123): el `<video>` cargaba pero se quedaba
+> en negro con `videoWidth = 0`. Por eso cada clip usa el *derivado* WebM VP9 de 480p
+> (`/wikipedia/commons/transcoded/…480p.vp9.webm`), que sí reproduce en Chrome, Edge, Firefox y Safari,
+> y conserva el original Theora como `<source>` de respaldo.
 
 ### Elemento `<iframe>` (contenido externo embebido)
 
@@ -105,11 +111,21 @@ Cada `<video>` incluye `<source type="...">`, `poster` y texto alternativo con `
 - **4 embeds de clip** (LeBron, Curry, Durant, Kobe) con `loading="lazy"`.
 - **1 iframe de Google Maps** con la ubicación del club.
 
+### Reproductor con recuperación automática
+
+El reproductor destacado se controla con la **API oficial de IFrame de YouTube** (`youtube.com/iframe_api`).
+Cuando el player emite `onError` —por ejemplo, código `150`, que indica que el propietario del video
+deshabilitó la incrustación— el sitio oculta el `<iframe>` y activa automáticamente un **`<video>` nativo**
+(WebM VP9 de Wikimedia) para que el usuario nunca se quede sin reproducción. Un botón
+*"Ver en archivo nativo / Ver en YouTube"* permite cambiar de modo a mano.
+
+Si la API no cargara, la página sigue funcionando con el `<iframe>` simple.
+
 ### Leyendas y sus sesiones de entrenamiento
 
 | Leyenda | Apodo | Video |
 |---|---|---|
-| LeBron James | King James | *1 hour workout (uncut)* — NBA Highlights |
+| LeBron James | King James | *Workout compilation* — Basketball Pros Workouts |
 | Michael Jordan | Su Majestad | *Jordan Workout with Chicago Bulls* |
 | Kobe Bryant | Black Mamba | *Kobe Bryant on Practice* |
 | Stephen Curry | Chef Curry | *Curry FULL Shooting Workout — 500+ Shots* |
@@ -117,7 +133,13 @@ Cada `<video>` incluye `<source type="...">`, `poster` y texto alternativo con `
 | Giannis Antetokounmpo | Greek Freak | *Motivational Workout* |
 | Kareem Abdul-Jabbar | Skyhook | *How Kareem Learned the Skyhook* |
 
-> Todos los identificadores de video fueron verificados contra la API oEmbed de YouTube y los archivos de Wikimedia Commons fueron comprobados con respuestas HTTP 200.
+> **Verificación de los medios.** Cada identificador se comprobó **dentro de un `<iframe>` real**
+> con Chrome headless (Chrome DevTools Protocol), no solo contra oEmbed: oEmbed responde `200` incluso
+> para videos que luego muestran *"Este video no está disponible"*. Ese método detectó que
+> `wQWmRIHavC8` (*LeBron James - 1 hour workout (uncut)*) tiene la incrustación deshabilitada
+> y se sustituyó por `WUqrS50rtMY`. Los 11 identificadores actuales reproducen sin error,
+> y los 4 archivos nativos decodifican con `videoWidth = 854` y `readyState = 4`.
+
 
 ---
 
@@ -146,7 +168,7 @@ Cada `<video>` incluye `<source type="...">`, `poster` y texto alternativo con `
 
 1. **Barra de progreso** de lectura en la parte superior.
 2. **Navegación activa** mediante `IntersectionObserver`.
-3. **Reproductor destacado** que cambia de video al pulsar "Ver entrenamiento".
+3. **Reproductor destacado** que cambia de video al pulsar "Ver entrenamiento", conmutando entre el `<iframe>` de YouTube y el `<video>` nativo de respaldo si el player emite `onError`.
 4. **Contadores animados** en las métricas del hero (`requestAnimationFrame` + easing cúbico).
 5. **Copiar tabla** al portapapeles con feedback visual.
 6. **Formulario de contacto** con validación y mensaje de estado (`aria-live`).
