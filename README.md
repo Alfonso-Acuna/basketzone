@@ -180,11 +180,17 @@ gh api repos/Alfonso-Acuna/basketzone/pages/builds --method POST
 
 ```
 basketzone/
-├── index.html      # Estructura semantica + multimedia + JS vanilla
-├── styles.css      # Sistema de diseno "Courtside" (22 bloques)
+├── index.html      # Estructura semántica + multimedia + JS vanilla
+├── styles.css      # Sistema de diseño "Courtside" (22 bloques)
 ├── README.md       # Este documento (contexto completo del proyecto)
-└── AGENTS.md       # Regla de deploy automatico en cada cambio
+└── AGENTS.md       # Regla de deploy automático en cada cambio
 ```
+
+### Codificación
+
+Todos los archivos se guardan en **UTF-8 sin BOM**. El texto visible del sitio usa
+entidades HTML (`&aacute;`, `&oacute;`, `&ntilde;`, `&iacute;`, `&uuml;`) para que los
+acentos y la eñe se representen correctamente en cualquier navegador y servidor.
 
 ---
 
