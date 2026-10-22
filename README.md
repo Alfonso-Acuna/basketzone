@@ -1,6 +1,6 @@
 # BasketZone
 
-> **El templo del baloncesto** — un sitio editorial sobre las leyendas, los entrenamientos y la técnica del sport.
+> **El templo del baloncesto** — un sitio editorial sobre las leyendas, los entrenamientos y la técnica del deporte.
 
 ![Estado](https://img.shields.io/badge/HTML5-E34F26?style=flat-square) ![Estado](https://img.shields.io/badge/CSS3-1572B6?style=flat-square) ![Estado](https://img.shields.io/badge/Deploy-GitHub%20Pages-2ea44f?style=flat-square)
 
