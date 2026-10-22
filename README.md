@@ -196,6 +196,10 @@ y envía el pedido a la RPC `create_order`. Si el CDN de Supabase no responde, d
 La tienda funciona con **Supabase** (PostgreSQL gestionado). El esquema completo está en
 [`supabase/schema.sql`](supabase/schema.sql) y se ejecuta una sola vez desde el **SQL Editor** del proyecto.
 
+> **Estado actual:** proyecto `https://awitypuohlxkcaknqteo.supabase.co` conectado. El catálogo, las tallas
+> y el stock se leen en tiempo real desde la base de datos; el registro usa Supabase Auth con confirmación
+> por correo. Sin conexión, el sitio degrada al catálogo local de `js/demo-data.js`.
+
 ### Modelo de datos
 
 | Tabla | Contenido |
@@ -233,7 +237,7 @@ de variantes y el `total_stock`, que es lo que consume el frontend.
 
 1. Crea un proyecto en [supabase.com](https://supabase.com).
 2. Pega `supabase/schema.sql` en el **SQL Editor** y ejecútalo.
-3. Copia `SUPABASE_URL` y `SUPABASE_ANON_KEY` (Settings → API) en `js/config.js`.
+3. Copia `SUPABASE_URL` y la **publishable key** (Settings → API; sustituye a la antigua *anon key*) en `js/config.js`.
 4. (Opcional) Desactiva la confirmación por correo en Authentication → Providers → Email para probar el registro al instante.
 
 Sin credenciales, la tienda arranca en **modo demo** con un catálogo local (`js/demo-data.js`):
@@ -263,7 +267,7 @@ basketzone/
 ├── styles.css          # Sistema de diseño "Courtside" (23 bloques)
 ├── favicon.svg         # Icono del sitio
 ├── js/
-│   ├── config.js       # SUPABASE_URL + SUPABASE_ANON_KEY
+│   ├── config.js       # SUPABASE_URL + publishable key
 │   ├── supabase.js     # Cliente y capa de datos
 │   ├── demo-data.js    # Catálogo de respaldo sin conexión
 │   └── store.js        # Catálogo, filtros, carrito, auth y checkout

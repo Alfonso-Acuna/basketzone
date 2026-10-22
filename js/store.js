@@ -31,6 +31,23 @@ const money = (cents) => new Intl.NumberFormat('es-ES', {
     currency: 'EUR'
 }).format((cents || 0) / 100);
 
+const AUTH_MESSAGES = [
+    [/invalid login credentials/i, 'Correo o contraseña incorrectos.'],
+    [/email not confirmed/i, 'Confirma tu correo antes de iniciar sesión.'],
+    [/user already registered/i, 'Ese correo ya tiene una cuenta: inicia sesión.'],
+    [/password should be at least/i, 'La contraseña debe tener al menos 6 caracteres.'],
+    [/invalid format/i, 'El correo electrónico no es válido.'],
+    [/rate limit/i, 'Demasiados intentos. Espera unos minutos.'],
+    [/signups? not allowed/i, 'El registro está desactivado en este proyecto.'],
+    [/fetch|network|failed to fetch/i, 'No hay conexión con el servidor. Revisa tu red.']
+];
+
+function friendlyError(error) {
+    const message = (error && (error.message || error.error_description)) || '';
+    const hit = AUTH_MESSAGES.find(([pattern]) => pattern.test(message));
+    return hit ? hit[1] : (message || 'No se pudo completar la operación.');
+}
+
 /* ---------------------------------------------------------
    Carrito
    --------------------------------------------------------- */
@@ -365,7 +382,7 @@ async function submitOrder(event) {
             renderProducts();
         }
     } catch (error) {
-        status.textContent = error.message || 'No se pudo guardar el pedido.';
+        status.textContent = friendlyError(error);
         status.className = 'form-status is-error';
     } finally {
         $('checkoutSubmit').disabled = false;
@@ -397,7 +414,7 @@ async function handleLogin(event) {
         paintSession();
         closeDrawer('authDrawer');
     } catch (error) {
-        status.textContent = error.message || 'No se pudo iniciar sesión.';
+        status.textContent = friendlyError(error);
         status.className = 'form-status is-error';
     }
 }
@@ -415,15 +432,22 @@ async function handleRegister(event) {
     }
 
     try {
-        await state.db.signUp({
+        const data = await state.db.signUp({
             email: $('registerEmail').value.trim(),
             password: $('registerPassword').value,
             fullName: $('registerName').value.trim()
         });
-        status.textContent = 'Cuenta creada. Revisa tu correo si Supabase exige confirmación.';
-        status.className = 'form-status is-ok';
+
+        if (data.session) {
+            state.session = data.session;
+            paintSession();
+            closeDrawer('authDrawer');
+        } else {
+            status.textContent = 'Cuenta creada. Revisa tu correo, confírmala y luego inicia sesión.';
+            status.className = 'form-status is-ok';
+        }
     } catch (error) {
-        status.textContent = error.message || 'No se pudo crear la cuenta.';
+        status.textContent = friendlyError(error);
         status.className = 'form-status is-error';
     }
 }
@@ -528,7 +552,7 @@ async function init() {
         }
     } else {
         state.demo = true;
-        $('shopBanner').innerHTML = 'Modo demo · datos de ejemplo. Para activar stock y pedidos reales, añade tu <code>SUPABASE_URL</code> y <code>SUPABASE_ANON_KEY</code> en <code>js/config.js</code>.';
+        $('shopBanner').innerHTML = 'Modo demo · datos de ejemplo. Para activar stock y pedidos reales, añade tu <code>SUPABASE_URL</code> y <code>SUPABASE_PUBLISHABLE_KEY</code> en <code>js/config.js</code>.';
         $('shopBanner').className = 'shop-banner is-demo';
     }
 
